@@ -8,10 +8,10 @@ let icon = document.querySelector ('.icon');
 
 if (navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position => {
-        long = position.coords.longitude;
-        lat = position.coords.latitude;
+        // long = position.coords.longitude;
+        // lat = position.coords.latitude;
 
-        const api = "https://api.openweathermap.org/data/3.0/onecall?lat=41.885&lon=-87.626&units=imperial&exclude=currently,daily&appid=b1bfaa8aef920555a5427b626bedb8c9"
+        const api = "https://api.openweathermap.org/data/2.5/weather?q={city name}&units=imperial&exclude=currently,daily&appid=b1bfaa8aef920555a5427b626bedb8c9"
         fetch (api)
         .then (response => {
             return response.json();
@@ -19,16 +19,15 @@ if (navigator.geolocation){
 
         .then (data => {
             console.log (data);
-            const { temp} = data.current;
-            const loctionTimezone
+            const { temp} = data.main.temp;
             // const {timezone } = data;
             //set some elements from the api
             var iconImg = `https://openweathermap.org/img/w/${data.current.weather[0].icon}.png`;
             tempDegree.textContent= temp;
             icon.setAttribute("src", iconImg)
             tempDescription.textContent= data.current.weather[0].main
-            loctionTimezone.textContent= data.timezone;
-            function setWeatherData 
+            loctionTimezone.textContent= data.name;
+            // function setWeatherData 
 
 
             
