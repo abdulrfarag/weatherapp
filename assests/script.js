@@ -17,19 +17,15 @@ let icon = document.querySelector ('.icon');
             const { temp} = data.main.temp;
             // const {timezone } = data;
             //set some elements from the api
-            var iconImg = `https://openweathermap.org/img/w/${data.current.weather[0].icon}.png`;
+            var iconImg = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
             tempDegree.textContent= temp;
             icon.setAttribute("src", iconImg)
-            tempDescription.textContent= data.current.weather[0].main
+            tempDescription.textContent= data.weather[0].main
             loctionTimezone.textContent= data.name;
-            // function setWeatherData 
-
-
-            
         });
 
-        });
-   
+    });
+
 
 // `https://openweathermap.org/img/w/${data.current.weather[0].icon}.png`;
 
