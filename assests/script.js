@@ -6,12 +6,7 @@ let tempDegree = document.querySelector ('.temp-degree');
 let loctionTimezone = document.querySelector ('.location-timezone');
 let icon = document.querySelector ('.icon');
 
-if (navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(position => {
-        // long = position.coords.longitude;
-        // lat = position.coords.latitude;
-
-        const api = "https://api.openweathermap.org/data/2.5/weather?q={city name}&units=imperial&exclude=currently,daily&appid=b1bfaa8aef920555a5427b626bedb8c9"
+        const api = "https://api.openweathermap.org/data/2.5/weather?q=chicago&units=imperial&exclude=currently,daily&appid=b1bfaa8aef920555a5427b626bedb8c9"
         fetch (api)
         .then (response => {
             return response.json();
@@ -34,10 +29,7 @@ if (navigator.geolocation){
         });
 
         });
-    }
-});
-
-
+   
 
 // `https://openweathermap.org/img/w/${data.current.weather[0].icon}.png`;
 
