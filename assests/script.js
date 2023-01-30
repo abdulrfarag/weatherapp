@@ -1,3 +1,4 @@
+navigator.geolocation.getCurrentPosition(positionSuccess, positionError)
 let searchbtn= document. querySelector ("#btn")
 searchbtn.addEventListener('click', () => {
     let long;

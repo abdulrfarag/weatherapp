@@ -1,12 +1,43 @@
-* {
+/* * {
     margin: 50;
     padding: 50;
     box-sizing: border-box;
+} */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-
-
 body {
+  margin: 0;
+  background: cadetblue;
+  color: hsl(200, 100%, 10%);
+  font-family: sans-serif;
+}
+
+.weather-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: sans-serif;
+    background: cadetblue;
+  }
+  
+  /** weather widget */
+  .card {
+    background: #000000d0;
+    color: #fcf9f9;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+  }
+
+/* body {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -18,7 +49,7 @@ body {
     display: flex;
     flex-wrap: wrap
 
-}
+} */
 
 .location, .temperature {
     height: 30vh;
