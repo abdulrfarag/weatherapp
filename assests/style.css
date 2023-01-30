@@ -15,6 +15,8 @@ body {
     background: cadetblue;
     font-family: sans-serif;
     color: aliceblue;
+    display: flex;
+    flex-wrap: wrap
 
 }
 
@@ -44,3 +46,4 @@ flex-direction: column;
 .degree-section h2 {
 font-size: 40px;
 }
+
