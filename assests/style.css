@@ -11,6 +11,7 @@
 }
 
 body {
+  padding: 10px;
   margin: 0;
   background: cadetblue;
   color: hsl(200, 100%, 10%);
@@ -87,3 +88,18 @@ flex-direction: column;
 font-size: 40px;
 }
 
+.main-contain{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+.divider2{
+  height: 5px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+/* .container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+} */
