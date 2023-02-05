@@ -8,22 +8,16 @@
     <title>weatherApp</title>
   </head>
   <body>
+    <div class="header">Weather Dashboard</div>
+
+    <!-- <h1>Search for a City:</h1> -->
     <div class="search-city">
-        <tr>
-            <input type="textext" id="city" />
-    <button id="btn">Search</button>
-        </tr>
+      <h1>Search for a City:</h1>
+      <input type="text" placeholder="type" id="city" />
+      <!-- <button id="btn">Search</button> -->
+      <button id="btn" onclick="getInputValue();">search</button>
     </div>
-
-
-
-
-
-    <!-- <h1>Search for a City:</h1>
-    <input type="textext" id="city" />
-    <button id="btn">Search</button>
-
-    <container>
+    <container class="container-1">
       <div class="location">
         <h1 class="location-timezone">Timezone</h1>
         <img class="icon" />
@@ -35,22 +29,56 @@
         <div class="temp-description">Sunny</div>
       </div>
     </container>
-    <div>
-      <container>
-        <div class="location">
-          <h1 class="location-timezone">Timezone</h1>
-          <img class="icon" />
-        </div>
-        <div class="temperature">
-          <div class="degree-section"></div>
-          <h2 class="temp-degree">34</h2>
-          <span>F</span>
-          <div class="temp-description">Sunny</div>
-        </div>
-      </container>
+    <container class="container-2">
+      <div class="location">
+        <h1 class="location-timezone">Timezone</h1>
+        <img class="icon" />
+      </div>
+      <div class="temperature">
+        <div class="degree-section"></div>
+        <h2 class="temp-degree">34</h2>
+        <span>F</span>
+        <div class="temp-description">Sunny</div>
+      </div>
+    </container>
+    <container class="container-3">
+      <div class="location">
+        <h1 class="location-timezone">Timezone</h1>
+        <img class="icon" />
+      </div>
+      <div class="temperature">
+        <div class="degree-section"></div>
+        <h2 class="temp-degree">34</h2>
+        <span>F</span>
+        <div class="temp-description">Sunny</div>
+      </div>
+    </container>
+    <container class="container-4">
+      <div class="location">
+        <h1 class="location-timezone">Timezone</h1>
+        <img class="icon" />
+      </div>
+      <div class="temperature">
+        <div class="degree-section"></div>
+        <h2 class="temp-degree">34</h2>
+        <span>F</span>
+        <div class="temp-description">Sunny</div>
+      </div>
+    </container>
+    <container class="container-5">
+      <div class="location">
+        <h1 class="location-timezone">Timezone</h1>
+        <img class="icon" />
+      </div>
+      <div class="temperature">
+        <div class="degree-section"></div>
+        <h2 class="temp-degree">34</h2>
+        <span>F</span>
+        <div class="temp-description">Sunny</div>
+      </div>
+    </container>
 
-      <!-- <div id="info"></div> -->
-    </div> -->
+    <div id="info"></div>
 
     <script src="./assests/script.js"></script>
   </body>

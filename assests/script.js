@@ -1,17 +1,43 @@
-navigator.geolocation.getCurrentPosition(positionSuccess, positionError)
-let searchbtn= document. querySelector ("#btn")
-searchbtn.addEventListener('click', () => {
-    let long;
-    let lat;
+window.addEventListener("load",()=>{
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((position)=>{
+            let lon= position.coords.longitude; 
+            let lat= position.coords.latitude;
+            const url= `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` + `lon=${lon}&appid=b1bfaa8aef920555a5427b626bedb8c9`;
+            
+
+            fetch(url).then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log(data);
+                console.log(new Date().getTime())
+                var dat= new Date(data.dt)
+                console.log(dat.toLocaleString(undefined,'Chicago/IL'))
+                console.log(new Date().getMinutes())
+                // weatherReport(data);
+            })
+        })
+    }
+})
+
+function getInputValue() {  // A method is used to get input value
+    let value = document.getElementById("city").value;
+    console.log(value);     // Display the value
+   let city = value
+   console.log(city)
+
     let tempDescription = document.querySelector('.temp-description');
     let tempDegree = document.querySelector ('.temp-degree');
     let loctionTimezone = document.querySelector ('.location-timezone');
     let icon = document.querySelector ('.icon');
-    let chosenCity = document.querySelector ('#city')
+    // let chosenCity = document.querySelector ('#city')
 
-        const api = "https://api.openweathermap.org/data/2.5/forecast?q=chicago&units=imperial&appid=b1bfaa8aef920555a5427b626bedb8c9"//
+        // const api = "https://api.openweathermap.org/data/2.5/forecast?q=chicago&units=imperial&appid=b1bfaa8aef920555a5427b626bedb8c9"//
 
-        // const api = "https://api.openweathermap.org/data/2.5/weather?q=+ city + &units=imperial&exclude=currently,daily&appid=b1bfaa8aef920555a5427b626bedb8c9"
+        // const api = "https://api.openweathermap.org/data/2.5/weather?q= + value + &units=imperial&exclude=currently,daily&appid=b1bfaa8aef920555a5427b626bedb8c9"
+        
+        var api= `http://api.openweathermap.org/data/2.5/weather?q=${city}&` + `appid=b1bfaa8aef920555a5427b626bedb8c9`;
+
         fetch (api)
         .then (response => {
             return response.json();
@@ -36,7 +62,7 @@ searchbtn.addEventListener('click', () => {
             loctionTimezone.textContent= data.name;
         });
 
-    });
+    };
 
 
 // `https://openweathermap.org/img/w/${data.current.weather[0].icon}.png`;
